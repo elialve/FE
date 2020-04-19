@@ -18,9 +18,10 @@ const requireAuth = require("./middlewares/requireAuth");
 const app = express();
 const publicPath = path.join(__dirname, '..', 'public');
 app.use(express.static(publicPath));
-
 app.use(bodyParser.json());
 app.use(upload())
+
+
 /*
 app.use(authRoutes);
 app.use(agencyRoutes);
@@ -65,12 +66,10 @@ app.post("/upload",(req, res) => {
     console.log(temp);
     var jsonObj = JSON.parse(temp);
     console.log(jsonObj['Project Name']);
-  
     res.redirect('/');
 
   }
 });
-
 
 
 app.listen(3000, () => {
